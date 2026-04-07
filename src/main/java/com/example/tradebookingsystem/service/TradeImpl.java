@@ -1,7 +1,9 @@
 package com.example.tradebookingsystem.service;
 
+import com.example.tradebookingsystem.kafka.producer.Producer;
 import com.example.tradebookingsystem.model.Trade;
 import com.example.tradebookingsystem.repository.TradeRepo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -11,7 +13,8 @@ import java.util.Optional;
 
 @Service
 public class TradeImpl implements TradeService {
-
+    @Autowired
+    Producer producer;
     private final TradeRepo tradeRepo;
 
     public TradeImpl(TradeRepo tradeRepo) {
@@ -35,6 +38,7 @@ public class TradeImpl implements TradeService {
     @Override
     public void createTrade(Trade trade) {
         tradeRepo.save(trade);
+
     }
 
     @Override

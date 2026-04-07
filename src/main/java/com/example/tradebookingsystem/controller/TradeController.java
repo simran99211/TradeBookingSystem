@@ -26,7 +26,6 @@ public class TradeController {
 
     @GetMapping
     public ResponseEntity<List<Trade>> getAllTrades() {
-        producer.sendMessage("Trade created successfully and sended to producer successfully");
         return new ResponseEntity<>(tradeService.getAllTrades(), HttpStatus.OK);
     }
 
@@ -39,6 +38,7 @@ public class TradeController {
     @PostMapping
     public ResponseEntity<String> createTrade(@RequestBody Trade trade) {
         tradeService.createTrade(trade);
+        producer.sendMessage(trade);
         return new ResponseEntity<>("Trade created successfully", HttpStatus.CREATED);
     }
 

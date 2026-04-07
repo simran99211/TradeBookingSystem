@@ -1,4 +1,4 @@
-package com.example.tradebookingsystem;
+package com.example.tradebookingsystem.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

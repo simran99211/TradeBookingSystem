@@ -1,4 +1,6 @@
-package com.example.tradebookingsystem;
+package com.example.tradebookingsystem.service;
+
+import com.example.tradebookingsystem.model.Trade;
 
 import java.util.List;
 

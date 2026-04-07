@@ -1,5 +1,7 @@
-package com.example.tradebookingsystem;
+package com.example.tradebookingsystem.service;
 
+import com.example.tradebookingsystem.model.Trade;
+import com.example.tradebookingsystem.repository.TradeRepo;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -10,7 +12,7 @@ import java.util.Optional;
 @Service
 public class TradeImpl implements TradeService {
 
-    private TradeRepo tradeRepo;
+    private final TradeRepo tradeRepo;
 
     public TradeImpl(TradeRepo tradeRepo) {
         this.tradeRepo = tradeRepo;

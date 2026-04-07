@@ -27,7 +27,6 @@ public class Producer {
             kafkaTemplate.send("topic1", json);
             System.out.println("sendMessage  :"+ json +" to topic : "+ topic1) ;
         } catch (JsonProcessingException e) {
-            // handle/log error appropriately
             throw new RuntimeException("Failed to serialize Trade", e);
         }
     }
